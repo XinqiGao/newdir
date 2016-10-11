@@ -4,11 +4,12 @@ library(scatterplot3d)
 library(ggplot2)
 # library(car)
 ## Set working directory
-setwd("C:/Users/Aakriti/Desktop/House Prices")
-getwd()
+#setwd("C:/Users/Aakriti/Desktop/House Prices")
+#getwd()
 
+Housing <- read.csv("~/Documents/newdir/R file.csv")
 ## Read data
-Housing=read.csv(file=file.choose())
+#Housing=read.csv(file=file.choose())
 data<-Housing[order(Housing$SalePrice),]
 # cleaning the data
 #changing name of Lot Area column
@@ -60,7 +61,7 @@ model_year_remodelled <-lm(SalePrice~Year.Remod.Add)
 summary(model_year_remodelled)
 # R squared value is 28.62%
 
-model_lot_area1 <-lm(SalePrice~ Gr.Liv.Area + Garage_Area + Total.Bsmt.SF + Mas.Vnr.Area)
+model_lot_area1 <-lm(SalePrice~ Gr.Liv.Area + Garage.Area + Total.Bsmt.SF + Mas.Vnr.Area)
 summary(model_lot_area1)
 #This increases R squared to 70.43%
 #Lot_area is not to be included because it it not evry prominent
@@ -141,3 +142,4 @@ abline(0,0,lwd=2,col="blueviolet")
 #distributed closely around 0 indicating the model is a good fit
 
 #Regression Over
+
